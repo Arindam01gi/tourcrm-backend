@@ -33,6 +33,10 @@ DEBUG = env.bool('DEBUG', default=True)
 ALLOWED_HOSTS = [ "localhost","127.0.0.1" ]
 
 
+AUTH_USER_MODEL = "accounts.User"
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
