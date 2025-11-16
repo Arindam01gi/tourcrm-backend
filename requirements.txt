@@ -1,0 +1,9 @@
+django==4.2
+django-cors-headers
+djangorestframework
+django-db-connection-pool[mysql]
+djangorestframework-simplejwt 
+django-environ
+mysqlclient
+pytz
+python-dateutil
