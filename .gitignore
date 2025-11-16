@@ -1,6 +1,61 @@
+# Python
 __pycache__/
-*.pyc
-.vscode/
+*.py[cod]
+*$py.class
+
+# Django specific
 *.log
-allmodels.py
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# Environments
 .env
+.env.*
+venv/
+.venv/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Migrations (optional)
+# Uncomment ONLY if you want to ignore migrations at early development
+# */migrations/*
+# !*/migrations/__init__.py
+
+# Build / cache / packages
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+site/
+
+# Django cache & sessions
+django_cache/
+*.pid
+
+# MyPy / type checkers
+.mypy_cache/
+.pytype/
+.dmypy.json
+
+# Coverage / testing
+.coverage
+coverage.xml
+htmlcov/
+
+# Logs
+*.log
+log/
+logs/
+
+# Backup / temp files
+*.bak
+*.temp
+*.tmp
