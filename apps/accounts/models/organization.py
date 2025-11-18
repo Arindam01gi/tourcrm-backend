@@ -13,5 +13,8 @@ class Organization(models.Model):
     slug = models.SlugField(unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'organization'
+
     def __str__(self):
         return self.name

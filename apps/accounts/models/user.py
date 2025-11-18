@@ -65,5 +65,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     REQUIRED_FIELDS = []         # no extra fields required for superuser
 
+    class Meta:
+        db_table = "users"
+
     def __str__(self):
         return self.email
