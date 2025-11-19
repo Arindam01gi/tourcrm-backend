@@ -11,7 +11,7 @@ class Organization(models.Model):
 
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
-    address = models.CharField(max_length=255,blank=False,null=True)
+    address = models.CharField(max_length=255,blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -1,7 +1,7 @@
 from django.db import transaction
 from django.utils.text import slugify
 from apps.accounts.models import Role, Organization, User
-from apps.accounts.services import create_default_roles
+from apps.accounts.services.roles_services import create_default_roles
 
 
 @transaction.atomic
@@ -14,9 +14,9 @@ def create_organization_with_admin(data):
     """
     # Create Organization
     org = Organization.objects.create(
-        name = data['organization_name'],
-        slug=slugify(data["organization_name"]),
-        address = data["address"]
+        name = data["organization_name"],
+        slug = slugify(data["organization_name"]),
+        address = data.get("address")
     )
 
     # Create Default Roles
