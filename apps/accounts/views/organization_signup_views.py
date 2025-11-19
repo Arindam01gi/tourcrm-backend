@@ -19,8 +19,29 @@ class OrganizationSignupView(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        org, admin_user = create_organization_with_admin(serializer.validated_data)
+        try:
+            org, admin_user = create_organization_with_admin(serializer.validated_data)
 
+        except ValueError as e:
+            error_code = str(e)
+
+            if error_code == "ORGANIZATION_ALREADY_EXISTS":
+                return Response(
+                    {
+                        "error": "ORGANIZATION_ALREADY_EXISTS",
+                        "message": "An organization with this name already exists.",
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
+            if error_code == "EMAIL_ALREADY_EXISTS":
+                return Response(
+                    {
+                        "error": "EMAIL_ALREADY_EXISTS",
+                        "message": "A user with this email already exists.",
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
         # Generate JWT token
         refresh = RefreshToken.for_user(admin_user)
 

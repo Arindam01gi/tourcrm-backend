@@ -13,6 +13,7 @@ def create_default_roles(organization):
     )
     manager = Role.objects.create(
         organization=organization,
+        name="Manager",
         permissions= ["lead.create","lead.update","lead.view"]
     )
     executive = Role.objects.create(
