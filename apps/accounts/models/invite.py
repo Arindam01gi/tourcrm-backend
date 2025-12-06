@@ -15,6 +15,7 @@ class Invite(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField()
+    token = models.CharField(max_length=32, unique=True, default=uuid.uuid4().hex)
     organization = models.ForeignKey(
         "accounts.Organization", on_delete=models.CASCADE, related_name="invites"
     )
