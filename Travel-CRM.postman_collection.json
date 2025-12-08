@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "120544dd-20d4-4a4e-8c65-aa0176702ae8",
+		"name": "Travel-CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25818394"
+	},
+	"item": [
+		{
+			"name": "Organization Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"organization_name\": \"Travel Tiger Pvt Ltd\",\r\n  \"admin_name\": \"Arindam\",\r\n  \"admin_email\": \"admin@gmail.com\",\r\n  \"admin_password\": \"Test@123\",\r\n  \"address\" : \"Baguiati , Kolkata, 700028\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/accounts/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\" : \"Test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/accounts/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Invite",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NjY3MDEyLCJpYXQiOjE3NjQ2NjY3MTIsImp0aSI6ImVlNWY3MDc0M2U4MjRmMmZiOTRlYmRmMjU0YjIyNzlkIiwidXNlcl9pZCI6ImY1ODRkOWEwLTZjMzAtNGYwMi1iNWFiLWUxOGVkOWVlNzczMCJ9.N86UHaJ0CEgytk0y73OnarSxDhVAjBfYG6e4akVLpcA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NjY3MDEyLCJpYXQiOjE3NjQ2NjY3MTIsImp0aSI6ImVlNWY3MDc0M2U4MjRmMmZiOTRlYmRmMjU0YjIyNzlkIiwidXNlcl9pZCI6ImY1ODRkOWEwLTZjMzAtNGYwMi1iNWFiLWUxOGVkOWVlNzczMCJ9.N86UHaJ0CEgytk0y73OnarSxDhVAjBfYG6e4akVLpcA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"employee@gmail.com\",\r\n  \"name\": \"John Doe\",\r\n  \"role_id\": \"6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/accounts/invite/\n",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"invite",
+						"\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Invite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Employee One\",\r\n  \"password\": \"Test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/accounts/accept-invite/77fb770dba1e4a76bf67cea81edf318b/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts",
+						"accept-invite",
+						"77fb770dba1e4a76bf67cea81edf318b",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
