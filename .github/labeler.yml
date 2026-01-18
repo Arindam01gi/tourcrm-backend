@@ -1,0 +1,25 @@
+# PR Labeler Configuration
+
+backend:
+  - changed-files:
+    - any-glob-to-any-file: ['apps/**', 'config/**', 'manage.py']
+
+accounts:
+  - changed-files:
+    - any-glob-to-any-file: 'apps/accounts/**'
+
+itinerary:
+  - changed-files:
+    - any-glob-to-any-file: 'apps/itinerary/**'
+
+infra:
+  - changed-files:
+    - any-glob-to-any-file: ['.github/**', 'requirements.txt', '.gitignore', '.env.example']
+
+docs:
+  - changed-files:
+    - any-glob-to-any-file: ['*.md', '.claude/**']
+
+tests:
+  - changed-files:
+    - any-glob-to-any-file: ['**/tests/**', '**/tests.py']
