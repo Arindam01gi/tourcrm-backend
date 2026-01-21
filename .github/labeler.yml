@@ -1,25 +1,26 @@
 # PR Labeler Configuration
+# Automatically labels PRs based on changed files
 
-backend:
+"module:core":
   - changed-files:
-    - any-glob-to-any-file: ['apps/**', 'config/**', 'manage.py']
+    - any-glob-to-any-file: ['config/**', 'manage.py']
 
-accounts:
+"module:accounts":
   - changed-files:
     - any-glob-to-any-file: 'apps/accounts/**'
 
-itinerary:
+"module:itinerary":
   - changed-files:
     - any-glob-to-any-file: 'apps/itinerary/**'
 
-infra:
+"infra":
   - changed-files:
     - any-glob-to-any-file: ['.github/**', 'requirements.txt', '.gitignore', '.env.example']
 
-docs:
+"docs":
   - changed-files:
     - any-glob-to-any-file: ['*.md', '.claude/**']
 
-tests:
+"test":
   - changed-files:
     - any-glob-to-any-file: ['**/tests/**', '**/tests.py']
