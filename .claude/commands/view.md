@@ -2,11 +2,11 @@
 description: Create a new API view (or ViewSet). Check if it needs a new serializer or specific permission classes based on project patterns.
 ---
 
-# /view
+# Workflow: Create API View
 
 Use this workflow to expose a new endpoint via DRF.
 
-## Workflow
+## Steps
 1. **Identify Pattern**: Is this a standard CRUD operation (use `ModelViewSet`) or a specialized action (use `@action` or a custom `APIView`)?
 2. **Serializer Check**: 
    - Check if an existing serializer in `serializers.py` can be reused.
@@ -16,6 +16,3 @@ Use this workflow to expose a new endpoint via DRF.
    - Set `queryset`, `serializer_class`, and `permission_classes`.
 4. **URL Routing**: Add the route to the app's `urls.py`.
 5. **Validation**: Ensure business logic is delegated to a service in `services.py` if complex.
-
-// turbo
-6. **Integrity**: Ensure every view has explicit `permission_classes`.
