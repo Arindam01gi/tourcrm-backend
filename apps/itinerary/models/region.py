@@ -1,18 +1,17 @@
 from django.db import models
+from apps.accounts.models.base import TenantBase
 
-class Region(models.Model):
+class Region(TenantBase):
     id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=512)
-    note = models.TextField()
-    organization = models.ForeignKey(
-        "accounts.Organization",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='region'
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=100)
+    
+    # Store rich text or bullet points for the itinerary PDF
+    inclusions = models.TextField(blank=True, null=True)
+    exclusions = models.TextField(blank=True, null=True)
 
     class Meta:
-        db_table = "region"
+        db_table = "regions"
+        unique_together = ('organization', 'name')
+
+    def __str__(self):
+        return self.name

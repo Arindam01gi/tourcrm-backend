@@ -15,7 +15,7 @@ class Organization(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        db_table = 'organization'
+        db_table = 'organizations'
 
     def __str__(self):
         return self.name
