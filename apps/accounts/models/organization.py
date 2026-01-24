@@ -18,4 +18,10 @@ class Organization(models.Model):
         db_table = 'organizations'
 
     def __str__(self):
+        """
+        Provide a human-readable name for the organization.
+        
+        Returns:
+            str: The organization's name.
+        """
         return self.name

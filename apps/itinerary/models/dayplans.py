@@ -15,4 +15,10 @@ class DayPlan(TenantBase):
         db_table = "day_plans"
 
     def __str__(self):
+        """
+        Return a human-readable representation combining the day plan's title and its destination name.
+        
+        Returns:
+            str: A string in the format "<title> - <destination.name>".
+        """
         return f"{self.title} - {self.destination.name}"

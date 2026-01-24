@@ -13,6 +13,12 @@ class Car(TenantBase):
         unique_together = ('organization', 'name')
 
     def __str__(self):
+        """
+        Human-readable representation of the car including its name and seating capacity.
+        
+        Returns:
+            str: The car's display string in the format "<name> (<capacity> seats)".
+        """
         return f"{self.name} ({self.capacity} seats)"
 
 class CarPricing(TenantBase):
@@ -44,4 +50,10 @@ class CarPricing(TenantBase):
         unique_together = ('organization', 'car', 'season', 'region')
     
     def __str__(self):
+        """
+        Provide a human-readable representation of the CarPricing instance.
+        
+        Returns:
+            str: A string formatted as "<car.name> - <region.name> - <price>".
+        """
         return f"{self.car.name} - {self.region.name} - {self.price}"

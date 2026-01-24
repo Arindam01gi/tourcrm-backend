@@ -14,4 +14,10 @@ class Region(TenantBase):
         unique_together = ('organization', 'name')
 
     def __str__(self):
+        """
+        Provide the region's name as the object's string representation.
+        
+        Returns:
+            str: The region's name.
+        """
         return self.name

@@ -17,4 +17,10 @@ class Destination(TenantBase):
         unique_together = ('organization', 'name')
 
     def __str__(self):
+        """
+        Return a human-readable representation of the destination combining its name and region.
+        
+        Returns:
+            str: The string in the format "name (region_name)".
+        """
         return f"{self.name} ({self.region.name})"

@@ -16,4 +16,10 @@ class Season(TenantBase):
         unique_together = ('organization', 'name')
 
     def __str__(self):
+        """
+        Return a human-readable representation of the season including its start and end dates.
+        
+        Returns:
+            str: String in the format "<name> (<start_date> to <end_date>)".
+        """
         return f"{self.name} ({self.start_date} to {self.end_date})"
