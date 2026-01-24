@@ -24,4 +24,10 @@ class Route(TenantBase):
         unique_together = ('organization', 'start_point', 'end_point')
 
     def __str__(self):
+        """
+        Return a human-readable label for the route combining the start and end destination names.
+        
+        Returns:
+            str: A string in the form "<start_point.name> to <end_point.name>".
+        """
         return f"{self.start_point.name} to {self.end_point.name}"
